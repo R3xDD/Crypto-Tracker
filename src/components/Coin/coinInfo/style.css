@@ -1,0 +1,7 @@
+.info a {
+    color: var(--grey);
+}
+.info a:hover {
+    color: var(--blue) !important;
+    transition: all 0.3s;
+}

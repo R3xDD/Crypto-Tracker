@@ -68,3 +68,168 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- const getCoinData = function (id) {
+    setIsLoading(true);
+    const myData = axios
+      .get(`https://api.coingecko.com/api/v3/coins/${id}`)
+      .then((response) => {
+        return response.data;
+      })
+      .catch((error) => {
+        console.log("error", error);
+      });
+    return myData;
+  };
+  
+  
+   const  getData =  async () =>  {
+     const data = await getCoinData(id);
+     coinObject(setCoinData, data);
+    if (data) {
+      const prices = await getPrices(id, days, priceType);
+      if (prices?.length > 0) {
+        settingChartData(setChart, prices);
+        setIsLoading(false);
+      }
+    }
+  }
+
+
+
+  useEffect(() => {
+    if (id) {
+      getData();
+    }
+  }, [id]);
+
+
+  
+
+
+
+  
+
+  const getPrices = function (id, days, priceType) {
+    const prices = axios
+      .get(
+        `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}&interval=daily`
+      )
+      .then((response) => {
+        if (response.data) {
+          console.log("Prices>>>", response.data);
+          if (priceType == "market_caps") {
+            return response.data.market_caps;
+          } else if (priceType == "total_volumes") {
+            return response.data.total_volumes;
+          } else {
+            return response.data.prices;
+          }
+        }
+      })
+      .catch((error) => {
+        console.log("error", error);
+      });
+    return prices;
+  };
+
+
+  const settingChartData = async (setChart, price) => {
+    const prices = await getPrices(id, days, priceType);
+    if (price?.length > 0) {
+      console.log("hhhhh");
+      setChart({
+        labels: price.map((item) => convertDate(item[0])),
+        datasets: [
+          {
+            label: "My First Dataset",
+            data: prices.map((item) => item[1]),
+            borderWidth: 1,
+            fill: false,
+            backgroundColor: "rgba(58, 128, 233,0.1)",
+            tension: 0,
+            borderColor: "#3a80e9",
+            pointRadius: 2,
+            yAxisID: "crypto1",
+          },
+        ],
+      });
+      setIsLoading(false);
+    }
+  }
+
+  const handleDaysChange = async (event) => {
+    setIsLoading(true);
+    setDays(event.target.value);
+    const prices = await getPrices(id, event.target.value, priceType);
+    if (prices?.length > 0) {
+      settingChartData(setChart, prices);
+      setIsLoading(false);
+    }
+  };
+
+  const handlePriceChange = async (event) => {
+    setIsLoading(true);
+    setPriceType(event.target.value);
+    const prices = await getPrices(id, days, event.target.value);
+    if (prices?.length > 0) {
+      settingChartData(setChart, prices);
+      setIsLoading(false);
+    }
+  }; -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
