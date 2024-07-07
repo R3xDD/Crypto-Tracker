@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import axios from "axios";
-function SelectCoin({ crypto1, crypto2, setCrypto1, setCrypto2 }) {
+import DaySelect from "../Coin/Select/Select";
+function SelectCoin({ crypto1, crypto2, handleCoinChange}) {
   const [allCoins, setAllCoins] = useState([]);
   useEffect(() => {
     getSelectData();
@@ -26,18 +27,10 @@ function SelectCoin({ crypto1, crypto2, setCrypto1, setCrypto2 }) {
     return myCoins;
   }
 
-  const handleCoinChange = async (event, isCoin2) => {
-    if (isCoin2) {
-      setCrypto2(event.target.value);
-    } else {
-      setCrypto1(event.target.value);
-    }
-  };
   return (
-    <div className="container">
-      <div className="  flex flex-col md:flex-row justify-center items-center gap-2 bg-[#1b1b1b] rounded-lg p-3 my-2 mx-auto">
-        <div className="w-[40%] flex justify-start items-center gap-2">
-          <p className="text-[#40afa0] text-lg md:text-xl font-normal  md:font-semibold  tracking-normal md:tracking-wide  leading-6 md:leading-8">
+    <div className="flex justify-center flex-col md:flex-row items-center gap-10 ml-24">
+        <div className="flex items-center w-full">
+          <p className="text-[#40afa0] text-sm md:text-md font-normal  md:font-semibold  tracking-normal md:tracking-wide  leading-4 md:leading-6">
             First Crypto :
           </p>
           <Select
@@ -60,13 +53,14 @@ function SelectCoin({ crypto1, crypto2, setCrypto1, setCrypto2 }) {
             label="Crypto 1"
             onChange={(event) => handleCoinChange(event, false)}
           >
-            {allCoins?.map((coin , i ) => (
+            {allCoins
+            ?.map((coin , i ) => (
               <MenuItem key={i} value={coin.id}>{coin.name}</MenuItem>
             ))}
           </Select>
         </div>
-        <div className="w-[40%] flex justify-start items-center gap-2">
-          <p className="text-[#40afa0] text-lg md:text-xl font-normal  md:font-semibold  tracking-normal md:tracking-wide  leading-6 md:leading-8">
+        <div className="flex items-center w-full">
+          <p className="text-[#40afa0] text-sm md:text-md font-normal  md:font-semibold  tracking-normal md:tracking-wide  leading-4 md:leading-6 ">
             Second Crypto :
           </p>
           <Select
@@ -95,7 +89,6 @@ function SelectCoin({ crypto1, crypto2, setCrypto1, setCrypto2 }) {
           </Select>
         </div>
 
-      </div>
     </div>
   );
 }

@@ -10,7 +10,6 @@ function TopButton() {
   };
 
   function scrollFunction() {
-    console.log(window.scrollY);
     if (window.scrollY < 500) {
       mybutton?.classList.toggle("hidden");
     }

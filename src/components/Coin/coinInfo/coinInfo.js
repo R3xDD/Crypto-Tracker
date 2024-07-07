@@ -9,7 +9,7 @@ function Info({ title, desc, image }) {
     desc +
     "<br/><p style='color:var(--grey);cursor:pointer; font-weight:bold; ' >Read Less...</p>";
 
-  const [toggle, setToggle] = useState(true);
+  const [toggle, setToggle] = useState(false);
 
   return (
     <MotionConfig>

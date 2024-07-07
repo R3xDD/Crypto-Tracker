@@ -54,9 +54,10 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true);
 
   return (
-    <div className="container">
-      <Header />
-      <TopButton />
+  <div>
+    <Header/>
+    <TopButton />
+     <div className="px-10 mx-auto">
       {loading ? (
         <Loader />
       ) : (
@@ -71,6 +72,8 @@ const Dashboard = () => {
       )
     }
     </div>
+  </div>
+    
   );
 };
 

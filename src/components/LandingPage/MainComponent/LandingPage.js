@@ -11,7 +11,7 @@ const LandingPage = () => {
   const notify = () => toast("App Shared !");
 
   return (
-    <div className="main-flex flex justify-between items-start px-4 py-12 ">
+    <div className="main-flex flex justify-between items-start px-4 py-12 z-50   ">
       <div>
         <MotionConfig>
           <motion.h1

@@ -12,6 +12,7 @@ import TopButton from "../components/Dashboard/TopButton/TopButton";
 import ColorToggleButton from "../components/Coin/Toggle/Toggle";
 import { getPrices } from "../functions/getPrices";
 import { getCoinData } from "../functions/getCoinData";
+import { settingChartData } from "../functions/settingChartData";
 
 const Coin = () => {
   const { id } = useParams();
@@ -40,26 +41,26 @@ const Coin = () => {
     }
   }, [id]);
 
-  async function settingChartData(setChart, price) {
-    const prices = await getPrices(id, days);
-    if (price?.length > 0) {
-      setChart({
-        labels: price.map((item) => convertDate(item[0])),
-        datasets: [
-          {
-            label: prices?.prices,
-            data: price.map((item) => item[1]),
-            borderWidth: 1,
-            fill: true,
-            backgroundColor: "#40afa04e",
-            tension: 0,
-            borderColor: "#40afa0",
-            pointRadius: 2,
-          },
-        ],
-      });
-    }
-  }
+  // async function settingChartData(setChart, price) {
+  //   const prices = await getPrices(id, days);
+  //   if (price?.length > 0) {
+  //     setChart({
+  //       labels: price.map((item) => convertDate(item[0])),
+  //       datasets: [
+  //         {
+  //           label: prices?.prices,
+  //           data: price.map((item) => item[1]),
+  //           borderWidth: 1,
+  //           fill: true,
+  //           backgroundColor: "#40afa04e",
+  //           tension: 0,
+  //           borderColor: "#40afa0",
+  //           pointRadius: 2,
+  //         },
+  //       ],
+  //     });
+  //   }
+  // }
 
   const handleDaysChange = async (event) => {
     setIsLoading(true);

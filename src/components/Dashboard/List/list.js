@@ -7,11 +7,13 @@ import { motion } from "framer-motion";
 import { Tooltip } from "@mui/material";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import StarIcon from "@mui/icons-material/Star";
+import { saveItemToWatchlist } from "../../../functions/saveItemToWatchlist";
+import { removeItemToWatchlist } from "../../../functions/RemoveItemsToWatchList";
 
 
 function List({ coin }) {
-  // const watchlist = JSON.parse(localStorage.getItem("watchlist"));
-  // const [isCoinAdded, setIsCoinAdded] = useState(watchlist?.includes(coin?.id));
+  const watchlist = JSON.parse(localStorage.getItem("watchlist"));
+  const [isCoinAdded, setIsCoinAdded] = useState(watchlist?.includes(coin?.id));
   const oldDate = new Date(coin?.last_updated)
   const newDate=oldDate.getDate()+ "/" + (oldDate.getMonth()+1) 
   return (
@@ -93,7 +95,7 @@ function List({ coin }) {
           <td className="coin-name mobile mr-4">
             ${convertNumber(coin?.market_cap)}
           </td>
-          {/* <td
+          <td
           className={`watchlist-icon ${
             coin?.price_change_percentage_24h < 0 && "watchlist-icon-red"
           }`}
@@ -108,7 +110,7 @@ function List({ coin }) {
           }}
         >
           {isCoinAdded ? <StarIcon /> : <StarOutlineIcon />}
-        </td> */}
+        </td>
         </motion.tr>
       </a>
     </div>
