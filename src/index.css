@@ -1,0 +1,296 @@
+
+
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500;600;700&display=swap"); */
+/* @import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900'); */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+:root {
+  --white: #fff;
+  --black:#020307 ;
+  --blue: #40afa0;
+  --grey: #20958b;
+  --darkgrey: #1b1b1b;
+  --green: #4bcc00;
+  --red: #911212;
+}
+
+[data-theme="dark"] {
+  --white: #ffffff;
+  --black:#020307 ;
+  --grey: #888;
+  --darkgrey: #1b1b1b;
+}
+
+[data-theme="light"] {
+  --white:#020307 ;
+  --black: #fff;
+  --grey: #888;
+  --darkgrey: #f3f3f3;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--black);
+
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  color: var(--white);
+}
+
+::selection {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--blue);
+  border-radius: 10px;
+}
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
+/*header Componernt*/
+.drawer{
+  display: none;
+}
+ @media only screen and (max-width: 800px) {
+  .links {
+    display: none;
+  }
+
+  .drawer {
+    display: block;
+  }
+
+  .header {
+    padding: 0.5rem 1.5rem;
+  }
+
+  .drawer-div {
+    width: 40vw;
+    background-color: var(--black);
+    height: 100vh;
+    padding: 0.5rem 1.5rem;
+  }
+}
+.btn:hover{
+  box-shadow: 2px 2px 10px rgba(58, 128, 233, 0.5);
+  
+}
+.outlined-btn:hover{
+  background-color: var(--blue);
+  box-shadow: 2px 2px 10px rgba(58, 128, 233, 0.5);
+  
+}
+/*landing Componernt*/
+.stroke:hover{
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: var(--white);
+}
+@media only screen and (max-width: 1350px) {
+  .h-1,
+  .h-2 {
+    font-size: 5rem;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .h-1,
+  .h-2 {
+    font-size: 4rem;
+  }
+
+  .gradient {
+    right: 0px;
+    top: 60px;
+    width: 200px;
+  }
+  .iphone {
+    right: 0px;
+    width: 250px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .h-1,
+  .h-2 {
+    font-size: 2rem;
+  }
+  .main-flex {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .h-1,
+  .h-2,
+  .info-text {
+    text-align: center;
+  }
+
+  .info-text {
+    font-size: 0.8rem;
+  }
+
+  .btn-flex {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .gradient-div {
+    margin-top: 8rem;
+    margin-right: auto;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .gradient,
+  .iphone {
+    left: 0px;
+  }
+
+  .iphone {
+    left: -30px;
+  }
+}
+
+
+
+
+.header{
+  backdrop-filter: blur(60px);
+}
+
+
+
+
+
+
+
+
+
+
+.container{
+  padding-right: 70PX;
+  padding-left: 70px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (max-width: 800px){
+  .container{
+    padding-right: 15px;
+  padding-left: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  }
+}
+ .cover{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: rgb(255, 255, 255);
+  background-image: url("./assets/bitcoin.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff;
+  z-index: -11;
+  position: relative;
+ }
+ .cover::before{
+  content: "";
+  top: 0;
+  right: 0;
+  background-color: #020307dc;
+  z-index: -10;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Grid */
+.grid-red:hover {
+  border: 2px solid var(--red);
+  transition: all 0.3s;
+}
+
+/* LIST */
+
+/* a {
+  text-decoration: none;
+  color: var(--white) !important;
+} */
+
+/* .cursor {
+  position: fixed;
+  transform: translateX(-50%) translateY(-50%);
+  pointer-events: none;
+  background-color: var(--blue);
+  z-index: 10000;
+  border: 2px solid var(--blue);
+  height: 0.3rem;
+  width: 0.3rem;
+  border-radius: 50%;
+  transition: all 200ms ease-out;
+}
+
+.cursor-pointer {
+  position: fixed;
+  transform: translateX(-50%) translateY(-50%);
+  pointer-events: none;
+  background-color: transparent;
+  border-radius: 50%;
+  z-index: 10000;
+  border: 2px solid var(--blue);
+  height: 2rem;
+  width: 2rem;
+  transition: all 400ms ease-out;
+}
+
+@media only screen and (max-width: 600px) {
+  .cursor-pointer,
+  .cursor {
+    display: none;
+  }
+} */
